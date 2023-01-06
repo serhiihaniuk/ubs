@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
+import './Search.scss';
 import SearchDropdown from '@src/pages/Search/components/Search/SearchDropdown';
 import { useClickOutside } from '@src/hooks/useClickOutside';
-import './Search.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
@@ -85,4 +85,7 @@ const Search: FC<SearchProps> = ({ onChange, label, searchResults, onSelect, val
   );
 };
 
+// no need to memo this component because in this scenario it will re-render only if props change
+// so memo won't have any affect.
+// also this means no reason to memo callbacks for this component
 export default Search;

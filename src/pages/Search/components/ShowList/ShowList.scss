@@ -3,6 +3,9 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(auto-fill, 1fr);
   gap: 1rem;
+  @media (max-width: 765px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .show-card {
@@ -38,5 +41,8 @@
     &:hover {
       color: var(--accent_color)
     }
+  }
+  p {
+    flex-grow: 1;
   }
 }

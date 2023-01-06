@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import './Header.scss'
 const Header = () => {
+    const location = useLocation()
     return (
         <header className="header">
             <nav className="nav">
-                <Link to={'/'}>Home</Link>
-                <Link to={'/show/1'}>Details</Link>
+                {location.pathname !== '/' && <Link to={'/'}>Go back</Link>}
             </nav>
         </header>
     );

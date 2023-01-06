@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import './ShowList.scss';
 import { useTypedSelector } from '@src/hooks/useTypedSelector';
 import ShowCard from '@src/pages/Search/components/ShowList/ShowCard';
@@ -6,7 +6,6 @@ import { ShowState } from '@src/store/types/reduxShowTypes';
 
 const ShowList: FC<Record<string, unknown>> = () => {
   const showMap = useTypedSelector((state) => state.selectedShow);
-
   return (
     <div className="show-list">
       {sortByDateAdded(showMap).map((show) => (
@@ -16,7 +15,7 @@ const ShowList: FC<Record<string, unknown>> = () => {
   );
 };
 
-export default ShowList;
+export default memo(ShowList);
 
 function sortByDateAdded(showMap: ShowState) {
   const show = Object.values(showMap);

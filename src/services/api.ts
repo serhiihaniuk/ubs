@@ -5,7 +5,7 @@ const filmApi = axios.create({
   baseURL: 'https://api.tvmaze.com'
 });
 
-export const getFilms = async ({ queryKey, signal }: QueryFunctionContext<string[]>): Promise<ShowData[]> => {
+export const getShow = async ({ queryKey, signal }: QueryFunctionContext<string[]>): Promise<ShowData[]> => {
   const [, query] = queryKey;
   if(!query) return [];
 
@@ -14,3 +14,13 @@ export const getFilms = async ({ queryKey, signal }: QueryFunctionContext<string
   });
   return response.data;
 };
+
+export const getSingleShow = async ({ queryKey, signal }: QueryFunctionContext<string[]>): Promise<Show> => {
+    const [, id] = queryKey;
+
+    const response = await filmApi.get(`/shows/${id}`, {
+        signal
+    });
+    return response.data;
+};
+

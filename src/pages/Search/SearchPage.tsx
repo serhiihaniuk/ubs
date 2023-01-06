@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import './SearchPage.scss';
-import { getFilms } from '@src/services/api';
+import { getShow } from '@src/services/api';
 import { useQuery } from '@tanstack/react-query';
 import Search, { type SearchResult } from '@src/pages/Search/components/Search/Search';
 import { boundShowActions } from '@src/store/actions/showActions';
@@ -11,16 +11,19 @@ const SearchPage = () => {
   const [showQuery, setShowQuery] = useState('');
   const { data: showData } = useQuery({
     queryKey: ['show', showQuery],
-    queryFn: getFilms
+    queryFn: getShow
   });
 
-  //TODO: memo this calculation
-  const searchResults: SearchResult[] | undefined = showData?.map(({ show }) => ({
-    id: show.id,
-    value: show.name
-  }));
+  const searchResults: SearchResult[] | undefined = useMemo(
+    () =>
+      showData?.map(({ show }) => ({
+        id: show.id,
+        value: show.name
+      })),
+    [showData]
+  );
 
-  const handleSelect = ({ id, value }: SearchResult) => {
+  const handleSelect = ({ value }: SearchResult) => {
     setSearchValue(value);
   };
 
@@ -59,4 +62,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default memo(SearchPage);
