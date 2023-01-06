@@ -1,12 +1,4 @@
+@use "reset";
 @use "variables";
 @use "global";
 
-
-.main {
-  min-width: 100%;
-  min-height: 200px;
-  background: url("../assets/images/main.png") no-repeat center;
-  background-size: contain;
-  margin: 0 auto;
-
-}

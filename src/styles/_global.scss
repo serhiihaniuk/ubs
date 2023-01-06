@@ -1,15 +1,15 @@
+html {
+  background: rgb(248, 237, 227);
+  background: linear-gradient(70deg, rgba(248, 237, 227, 1) 9%, rgba(151, 222, 206, 1) 28%, rgba(255, 255, 255, 1) 46%, rgba(255, 255, 255, 1) 81%);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
 body {
-    background-color: hsl(194, 100%, 65%);
-    padding: 25px;
+  min-height: 100svh;
 }
 
-:root {
-  --color: darkblue;
-}
-
-body{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  color: var(--color);
+.page {
+  padding-top: calc(var(--header-height) + 10px);
 }

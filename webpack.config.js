@@ -19,6 +19,7 @@ module.exports = {
   target: target,
   output: {
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     assetModuleFilename: 'images/[hash][ext][query]',
     clean: true
   },
@@ -62,6 +63,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     hot: true,
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, 'dist')
     }

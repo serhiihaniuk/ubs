@@ -70,3 +70,6 @@ declare module '*.module.sass' {
     export default classes;
 }
 
+interface ValidRefTarget {
+    contains(target: EventTarget | null): any;
+}
