@@ -16,7 +16,6 @@ const ShowDetails = () => {
     queryFn: getSingleShow
   });
 
-
   if (isLoading) return <main className="show-details">Loading...</main>;
   if (isError) return <main className="show-details">Error...</main>;
 
@@ -36,7 +35,7 @@ const ShowDetails = () => {
         </p>
       )}
       <p>{sanitizeHTML(show?.summary || '')}</p>
-        <p>Status: {show?.status}</p>
+      <p>Status: {show?.status}</p>
     </main>
   );
 };

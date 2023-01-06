@@ -22,10 +22,12 @@
     justify-content: space-around;
     align-items: center;
     background: 0;
+
     span {
       padding-right: 10px;
       border-right: 1px solid var(--accent_color);
     }
+
     &:hover, &:focus {
       outline: 1px solid;
     }
@@ -52,6 +54,7 @@
     padding: 0.55rem 0;
     display: flex;
     align-items: center;
+
     svg {
       color: var(--grey_300);
     }

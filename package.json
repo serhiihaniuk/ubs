@@ -1,5 +1,6 @@
 {
   "private": true,
+  "homepage":".",
   "scripts": {
     "start": "webpack serve",
     "watch": "webpack watch",

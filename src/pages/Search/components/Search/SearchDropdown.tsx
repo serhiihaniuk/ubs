@@ -31,7 +31,7 @@ const SearchDropdownItem: FC<SearchDropDownItemProps> = ({ searchResult, onSelec
   };
   return (
     <li className="search__item">
-        <FontAwesomeIcon icon={faFilm} />
+      <FontAwesomeIcon icon={faFilm} />
       <button onClick={handleSelect}>{searchResult.value}</button>
     </li>
   );

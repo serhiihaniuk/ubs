@@ -1,13 +1,16 @@
 import axios from 'axios';
-import { QueryFunctionContext } from "@tanstack/react-query";
+import { QueryFunctionContext } from '@tanstack/react-query';
 
 const filmApi = axios.create({
   baseURL: 'https://api.tvmaze.com'
 });
 
-export const getShow = async ({ queryKey, signal }: QueryFunctionContext<string[]>): Promise<ShowData[]> => {
+export const getShow = async ({
+  queryKey,
+  signal
+}: QueryFunctionContext<string[]>): Promise<ShowData[]> => {
   const [, query] = queryKey;
-  if(!query) return [];
+  if (!query) return [];
 
   const response = await filmApi.get(`/search/shows?q=${query}`, {
     signal
@@ -15,12 +18,15 @@ export const getShow = async ({ queryKey, signal }: QueryFunctionContext<string[
   return response.data;
 };
 
-export const getSingleShow = async ({ queryKey, signal }: QueryFunctionContext<string[]>): Promise<Show> => {
-    const [, id] = queryKey;
+export const getSingleShow = async ({
+  queryKey,
+  signal
+}: QueryFunctionContext<string[]>): Promise<Show> => {
+  const [, id] = queryKey;
 
-    const response = await filmApi.get(`/shows/${id}`, {
-        signal
-    });
-    return response.data;
+  const response = await filmApi.get(`/shows/${id}`, {
+    signal
+  });
+  return response.data;
 };
 

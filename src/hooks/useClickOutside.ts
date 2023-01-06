@@ -1,4 +1,4 @@
-import { RefObject, useEffect } from 'react';
+import { type RefObject, useEffect } from 'react';
 
 export const useClickOutside = (ref: RefObject<ValidRefTarget>, onClickOutside: () => void) => {
     useEffect(() => {
@@ -8,10 +8,8 @@ export const useClickOutside = (ref: RefObject<ValidRefTarget>, onClickOutside: 
             }
         }
 
-        // Bind the event listener
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
-            // Unbind the event listener on clean up
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [ref]);
