@@ -1,8 +1,8 @@
-import {combineReducers} from "redux";
-import {filmReducer} from "./filmReducer";
+import { combineReducers } from 'redux';
+import { showReducer } from './showReducer';
 
 export const rootReducer = combineReducers({
-    films: filmReducer
-})
+    selectedShow: showReducer
+});
 
 export type RootState = ReturnType<typeof rootReducer>

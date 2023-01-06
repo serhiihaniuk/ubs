@@ -27,6 +27,7 @@ type Show = {
   summary:        null | string;
   updated:        number;
   _links:         Links;
+  dateAdded?: number
 }
 
 type Links = {
