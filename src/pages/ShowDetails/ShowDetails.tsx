@@ -21,7 +21,7 @@ const ShowDetails = () => {
 
   return (
     <main className="show-details">
-      <h1> {show?.name}</h1>
+      <h1 className="show-details__title"> {show?.name}</h1>
       <div className="show-details__img-wrapper">
         <img className="show-details__image" src={show?.image?.medium} alt={show?.name} />
       </div>

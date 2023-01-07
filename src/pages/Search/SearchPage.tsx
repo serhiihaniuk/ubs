@@ -46,8 +46,8 @@ const SearchPage = () => {
   };
 
   return (
-    <main className="search-page">
-      <div className="search-page__search">
+    <section className="search-page">
+      <aside className="search-page__search">
         <Search
           onChange={handleQueryChange}
           onSelect={handleSelect}
@@ -56,9 +56,9 @@ const SearchPage = () => {
           value={searchValue}
           onSubmit={handleAddShow}
         />
-      </div>
+      </aside>
       <ShowList />
-    </main>
+    </section>
   );
 };
 

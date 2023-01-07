@@ -20,6 +20,7 @@ const ShowCard: FC<ShowCardProps> = ({ show }) => {
           <img className="show-card__image" src={show.image?.medium} alt="film desc" />
         )}
       </div>
+      {show?.rating.average && <p> Rating: {show.rating.average}</p>}
       <p>{!!show.genres.length && 'genres: ' + show.genres.join(', ')}</p>
 
       <button onClick={handleRemove}>Remove</button>
