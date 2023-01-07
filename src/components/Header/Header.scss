@@ -9,6 +9,8 @@
   display: flex;
   justify-content: center;
   backdrop-filter: blur(5px);
+  background: rgba(48, 48, 48, 95%);
+  box-shadow: var(--box_shadow);
 }
 
 .nav {
@@ -16,4 +18,7 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+  a {
+    color: var(--grey_100);
+  }
 }

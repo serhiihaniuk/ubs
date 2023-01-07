@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { boundShowActions } from '@src/store/actions/showActions';
 
@@ -27,4 +27,4 @@ const ShowCard: FC<ShowCardProps> = ({ show }) => {
   );
 };
 
-export default ShowCard;
+export default memo(ShowCard);

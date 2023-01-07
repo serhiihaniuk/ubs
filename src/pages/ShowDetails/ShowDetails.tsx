@@ -23,9 +23,9 @@ const ShowDetails = () => {
     <main className="show-details">
       <h1> {show?.name}</h1>
       <div className="show-details__img-wrapper">
-        <img src={show?.image?.medium} alt={show?.name} />
+        <img className="show-details__image" src={show?.image?.medium} alt={show?.name} />
       </div>
-      <p>{show?.genres.length && 'Genres: ' + show.genres.join(', ')}</p>
+      <p>{!!show?.genres.length && 'Genres: ' + show.genres.join(', ')}</p>
       <p> Language: {show?.language}</p>
       {show?.rating.average && <p> Rating: {show.rating.average}</p>}
       {show?.network?.country?.name && <p> Country: {show.network.country.name}</p>}

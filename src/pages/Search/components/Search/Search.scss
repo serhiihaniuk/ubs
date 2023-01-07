@@ -100,19 +100,24 @@
   &__input {
     border: 0;
     border-radius: 0.3rem;
-    border-bottom: 2px solid var(--grey_300);
+    border-bottom: 1px solid var(--grey_300);
     height: 2rem;
     width: 30ch;
     padding: 0.25rem 2rem;
     font-size: 1rem;
     font-family: var(--font-family);
-    box-shadow: var(--box_shadow);
+    //box-shadow: var(--box_shadow);
+
     color: var(--grey_500);
 
     &:focus-visible {
       outline: 0;
-      border-color: var(--accent_color);
+      border-bottom: 3px solid var(--accent_color);
+      box-shadow: 4px 2px 12px -3px rgba(13, 148, 136, 79%);
     }
+  }
+  &__input:focus::placeholder {
+    color: transparent;
   }
 
 }
