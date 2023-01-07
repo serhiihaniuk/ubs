@@ -12,7 +12,6 @@ const ShowList: FC<Record<string, unknown>> = () => {
 
     return (
         <main className="show-list">
-
             {showSortedByDateAdded.length ?
                 showSortedByDateAdded.map((show) => (
                     <ShowCard key={show.id} show={show}/>
